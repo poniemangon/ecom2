@@ -1,22 +1,19 @@
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import img from "../../../assets/img/logo_qnvapf.svg";
 import { Link } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import { menu } from "../../../routes/navigation";
+import MenuContainer from "../../common/menu/MenuContainer";
+import img from "../../../assets/img/logo_qnvapf.svg";
 
 const Navbar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
-        className={StyleSheet.navBarContainer}
+        sx={{ backgroundColor: "secondary.main", margin: "0" }} // Use sx for styles
         position="static"
-        sx={{ backgroundColor: "secondary.main", margin: "0" }}
       >
         <Toolbar sx={{ backgroundColor: "secondary.main" }}>
           <Box
@@ -65,28 +62,9 @@ const Navbar = () => {
               ></IconButton>
               <img src={img} alt="" />
             </Box>
-            <Box>
-              {menu.map((item, index) => (
-                <Link
-                  key={item.id}
-                  to={item.path}
-                  style={{
-                    color: "white",
-                    textDecoration: "none",
-                    marginRight: index < menu.length - 1 ? "8px" : "0", // Adds spacing except for the last link
-                  }}
-                  // Apply hover color to the links
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.color = "#D87D4A"; // Primary.main color on hover
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.color = "white"; // Reset to white on mouseout
-                  }}
-                >
-                  {item.title}
-                </Link>
-              ))}
-            </Box>
+
+            <MenuContainer /> 
+            
             <Box>
               <Link
                 to="/register"

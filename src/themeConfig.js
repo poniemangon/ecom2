@@ -5,9 +5,10 @@ import { createTheme } from "@mui/material";
 // #f1f1f1 blanco
 
 export const customTheme = createTheme({
-  // typography: {
-  //   fontFamily: 'Roboto, sans-serif', // Use 'Roboto' as the font family
-  // },
+  typography: {
+    fontFamily: 'Roboto',
+    fontWeight: 'normal' // Use 'Roboto' as the font family
+  },
   palette: {
     primary: {
       main: "#D87D4A", //naranja
