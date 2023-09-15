@@ -1,15 +1,21 @@
 import { createTheme } from "@mui/material";
+
+// #101010 negro
+// #D87D4A naranja
+// #f1f1f1 blanco
+
 export const customTheme = createTheme({
+  // typography: {
+  //   fontFamily: 'Roboto, sans-serif', // Use 'Roboto' as the font family
+  // },
   palette: {
     primary: {
-      main: "#101010",
-      second: "#f1f1f1",
-      negro: "#000000c2",
-      blanco:"#ffffff"
+      main: "#D87D4A", //naranja
+      second: "#FBAF85",
     },
     secondary: {
-      main: "#D87D4A",
-      second: "#FBAF85",
+      main: "#101010", //negro
+      second: "#f1f1f1" // blanco
     },
   },
 });
@@ -21,8 +27,9 @@ export const customDark = createTheme({
       second: "#FBAF85",
     },
     secondary: {
-      main: "#101010",
-      second: "#f1f1f1",
+      main: "#f1f1f1",
+      second: "white",
     },
   },
 });
+

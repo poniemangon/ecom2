@@ -1,10 +1,13 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const Home = () => {
   return (
-    <div>
-      <Typography variant="h1" color="primary.second">Funcionando</Typography>
-    </div>
+    <Box>
+      {" "}
+      <Typography variant="h2" color="primary.second">
+        Funcionando
+      </Typography>
+    </Box>
   );
 };
 
