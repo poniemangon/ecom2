@@ -2,6 +2,7 @@ import axios from "axios";
 import ProductsList from "./ProductsList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { getAllProducts } from "../../../services/productsServices";
 
 const ProductsListContainer = () => {
   const [products, setProducts] = useState([]);
@@ -9,8 +10,8 @@ const ProductsListContainer = () => {
 
   useEffect(() => {
     const getData = async () => {
-        const response = await axios.get("http://localhost:5000/products");
-        const productsByCategory = response.data.filter(
+        const data = await getAllProducts()
+        const productsByCategory = data.filter(
           (prod) => prod.category === categoryName
         );
         setProducts(productsByCategory);

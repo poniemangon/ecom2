@@ -1,12 +1,10 @@
-import React from 'react';
-import Menu from './Menu'; // Make sure to adjust the import path
-import { menu } from '../../../routes/navigation'; // Import the menu data
+import { menu } from "../../../routes/navigation"; // Import the menu data
 
-const MenuContainer = () => {
-  return (
-    <Menu menu={menu} />
-  );
-}
+import React from "react";
+import Menu from "./Menu";
+
+const MenuContainer = ({ flexDirection }) => {
+  return <Menu menu={menu} flexDirection={flexDirection} />;
+};
 
 export default MenuContainer;
-

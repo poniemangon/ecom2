@@ -1,10 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import { Box } from "@mui/material";
+import { Link } from 'react-router-dom';
+import { Box, Typography } from "@mui/material";
 
-const Menu = ({ menu }) => {
+
+const Menu = ({ menu, flexDirection }) => {
   return (
-    <Box>
+    <Box sx={{
+      display: "flex",
+      flexDirection: flexDirection, // Use the flexDirection prop to set the layout
+    }}>
       {menu.map((item, index) => (
         <Link
           key={item.id}
@@ -21,7 +25,7 @@ const Menu = ({ menu }) => {
             e.currentTarget.style.color = "white";
           }}
         >
-          {item.title}
+          <Typography variant="body1">{item.title}</Typography>
         </Link>
       ))}
     </Box>
@@ -29,3 +33,4 @@ const Menu = ({ menu }) => {
 };
 
 export default Menu;
+
