@@ -32,6 +32,7 @@ const ProductsList = ({ products, categoryName }) => {
             name={product.name}
             image={product.image}
             description={product.description}
+            isListCard={true}
           />
         );
       })}

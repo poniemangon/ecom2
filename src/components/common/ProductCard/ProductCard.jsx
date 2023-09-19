@@ -1,8 +1,8 @@
 import { Box, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ id, name, description, image, showAddToCartButton }) => {
-  const flexDirection = id % 2 === 0 ? "row" : "row-reverse";
+const ProductCard = ({ id, name, description, image, isListCard }) => {
+  const flexDirection = isListCard ? (id % 2 === 0 ? "row" : "row-reverse") : "row";
 
   return (
     <Box
@@ -49,16 +49,16 @@ const ProductCard = ({ id, name, description, image, showAddToCartButton }) => {
         <Typography variant="body1">{description}</Typography>
 
         <Box sx={{ marginTop: "10%" }}>
-          {showAddToCartButton ? (
-            <Button variant="contained" sx={{ backgroundColor: "primary.main" }}>
-              Add to cart
-            </Button>
-          ) : (
+          {isListCard ? (
             <Link to={`/detail/${id}`}>
               <Button variant="contained" sx={{ backgroundColor: "primary.main" }}>
                 See product
               </Button>
             </Link>
+          ) : (
+            <Button variant="contained" sx={{ backgroundColor: "primary.main" }}>
+              Add to cart
+            </Button>
           )}
         </Box>
       </Box>
