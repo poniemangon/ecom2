@@ -1,9 +1,11 @@
 import { Box, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import CounterContainer from "../counter/CounterContainer";
 
-const ProductCard = ({ id, name, description, image, isListCard }) => {
+
+const ProductCard = ({ id, name, description, image, isListCard, onAdd }) => {
   const flexDirection = isListCard ? (id % 2 === 0 ? "row" : "row-reverse") : "row";
-
+ 
   return (
     <Box
       sx={{
@@ -56,9 +58,10 @@ const ProductCard = ({ id, name, description, image, isListCard }) => {
               </Button>
             </Link>
           ) : (
-            <Button variant="contained" sx={{ backgroundColor: "primary.main" }}>
-              Add to cart
-            </Button>
+            
+              
+            <CounterContainer onAdd={onAdd}/>
+           
           )}
         </Box>
       </Box>
