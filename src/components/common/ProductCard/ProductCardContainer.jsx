@@ -1,11 +1,11 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 
-const ProductCardContainer = ({ id, image, name, description, isListCard }) => {
+const ProductCardContainer = ({ id, image, name, description, isListCard, onAdd }) => {
   
 
 
-  console.log(onAdd)
+
   return (
     <div>
       {/* Pass isListCard as a prop to ProductCard */}
