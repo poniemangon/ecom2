@@ -14,22 +14,20 @@ const ProductDetailContainer = () => {
     };
 
     getData();
-
-
-
-  }, [id])
-  const onAdd = ( quantity) => {
-    let data = { ...product, quantity: quantity }
-    console.log("added to cart: ", product.name, data.quantity)
-  }
-  return     <ProductDetail
-  id={product.id}
-  image={product.image}
-  name={product.name}
-  description={product.description}
-  onAdd={onAdd}
-
-/>;
+  }, [id]);
+  const onAdd = (quantity) => {
+    let data = { ...product, quantity: quantity };
+    console.log("added to cart: ", product.name, data.quantity);
+  };
+  return (
+    <ProductDetail
+      id={product.id}
+      image={product.image}
+      name={product.name}
+      description={product.description}
+      onAdd={onAdd}
+    />
+  );
 };
 
 export default ProductDetailContainer;
