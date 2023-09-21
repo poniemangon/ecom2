@@ -8,8 +8,12 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MenuContainer from "../../common/menu/MenuContainer";
 import img from "../../../assets/img/logo_qnvapf.svg";
 import TemporaryDrawer from "./Drawer";
+import ModalCustomContainer from "../../common/modal/ModalCustomContainer";
+import { useState } from "react";
 
-const Navbar = () => {
+
+
+const Navbar = ({handleOpen, handleClose, open}) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -86,7 +90,8 @@ const Navbar = () => {
               >
                 Login
               </Link>
-              <ShoppingCartOutlinedIcon />
+              <ShoppingCartOutlinedIcon onClick={handleOpen}/>
+              <ModalCustomContainer open={open} handleClose={handleClose}/>
             </Box>
           </Box>
         </Toolbar>

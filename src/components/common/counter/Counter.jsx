@@ -25,7 +25,7 @@ const Counter = ({ counter, setCounter, onAdd }) => {
       <Button
         onClick={() => onAdd(counter)}
         variant="contained"
-        sx={{ backgroundColor: "primary.main" }}
+        sx={{ backgroundColor: "primary.main", borderRadius: "0%" }}
       >
         Add to cart
       </Button>
