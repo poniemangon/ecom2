@@ -1,6 +1,9 @@
 import HomeContainer from "../components/pages/home/HomeContainer";
 import ProductsListContainer from "../components/pages/productsList/ProductsListContainer";
 import ProductDetailContainer from "../components/pages/detail/ProductDetailContainer";
+import CheckoutContainer from "../components/pages/checkout/CheckoutContainer";
+
+
 
 export const menuRoutes = [
     {
@@ -18,11 +21,11 @@ export const menuRoutes = [
         path: "/category/:categoryName",
         Element: ProductsListContainer
     },
-    // {
-    //     id:"checkout",
-    //     path: "/checkout",
-    //     Element: Checkout
-    // },
+    {
+        id:"checkout",
+        path: "/checkout",
+        Element: CheckoutContainer
+    },
     // {
     //     id:"login",
     //     path: "/login",
