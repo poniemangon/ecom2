@@ -11,7 +11,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 import { useState } from "react";
 
-const PasswordField = () => {
+const PasswordField = ({onChange, error}) => {
     const [showPassword, setShowPassword] = useState(false);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -41,6 +41,8 @@ const PasswordField = () => {
           </InputAdornment>
         }
         label="Password"
+        onChange={onChange}
+        error={error}
       />
     </FormControl>
   );
