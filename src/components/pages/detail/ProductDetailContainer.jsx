@@ -2,9 +2,14 @@ import { useParams } from "react-router-dom";
 import ProductDetail from "./ProductDetail";
 import { useEffect, useState } from "react";
 import { getProductById } from "../../../services/productsServices";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../../store/cartSlice";
+
+
 
 const ProductDetailContainer = () => {
   const { id } = useParams();
+  const dispatch = useDispatch()
   const [product, setProduct] = useState({});
   console.log(product);
   useEffect(() => {
@@ -14,18 +19,26 @@ const ProductDetailContainer = () => {
     };
 
     getData();
-  }, [id]);
-  const onAdd = (quantity) => {
-    let data = { ...product, quantity: quantity };
-    console.log("added to cart: ", product.name, data.quantity);
+
+  }, [id])
+  
+  
+  const onAdd = (cantidad) => {
+    let data = {
+      ...product, quantity: cantidad
+    }
+
+  dispatch( addToCart(data))
   };
   return (
     <ProductDetail
+    
       id={product.id}
+      onAdd={onAdd}
       image={product.image}
       name={product.name}
       description={product.description}
-      onAdd={onAdd}
+      
     />
   );
 };

@@ -10,51 +10,70 @@ import img from "../../../assets/img/logo_qnvapf.svg";
 import TemporaryDrawer from "./Drawer";
 import ModalCustomContainer from "../../common/modal/ModalCustomContainer";
 import { useState } from "react";
+import { Typography } from "@mui/material";
 
-
-
-const Navbar = ({handleOpen, handleClose, open}) => {
+const Navbar = ({ handleOpen, handleClose, open }) => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1}}>
       <AppBar
         sx={{ backgroundColor: "secondary.main", margin: "0" }} // Use sx for styles
         position="static"
       >
-        <Toolbar sx={{ backgroundColor: "secondary.main" }}>
+        <Toolbar sx={{ backgroundColor: "secondary.main", display: "flex" }}>
           <Box
             sx={{
               display: { xs: "flex", md: "none" },
               alignItems: "center",
+              justifyContent: "space-between",
               gap: "2rem",
               width: "100%",
+              height: "64px",
+              
             }}
           >
-            <Box>
+            <Box
+              sx={{
+                // visibility: "hidden",
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
               <IconButton
                 size="large"
                 edge="start"
                 color="inherit"
                 aria-label="menu"
-                sx={{ mr: 2 }}
+                sx={{ mr: 2, padding: "0%", margin: "0%" }}
               >
                 <MenuIcon />
-                <img src={img} alt="" />
               </IconButton>
+              <Box sx={{ height: "100%" }}></Box>
             </Box>
-            <Box sx={{ width: "100%" }}></Box>
+            <Box sx={{backgroundColor: {hover: ""}}}>
+              <Link to="/">
+                <img src={img} alt="" />
+              </Link>
+            </Box>
+
             <Box>
-              <ShoppingCartOutlinedIcon />
+            <ShoppingCartOutlinedIcon onClick={handleOpen} />
+              <ModalCustomContainer open={open} handleClose={handleClose} />
             </Box>
           </Box>
 
           <Box
             sx={{
+              
               display: { xs: "none", md: "flex" },
               justifyContent: "space-between",
               alignItems: "center",
               width: "80%",
-              margin: "100px",
+              // height: "100px",
               m: "0 auto",
+              paddingLeft: {lg: "8%"},
+              paddingRight: {lg: "8%"},
+              paddingTop: "1.5%",
+              paddingBottom: "1.5%"
             }}
           >
             <Box>
@@ -65,12 +84,15 @@ const Navbar = ({handleOpen, handleClose, open}) => {
                 aria-label="menu"
                 sx={{ mr: 2 }}
               ></IconButton>
-              <img src={img} alt="" />
+              <Link to="/">
+                <img src={img} alt="" />
+              </Link>
             </Box>
 
-            <MenuContainer /> 
-            
-            <Box>
+            <MenuContainer />
+
+            <Box sx={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+              <Box sx={{display: "flex", flexDirection: "row", alignItems: "center"}}>
               <Link
                 to="/register"
                 style={{
@@ -90,8 +112,15 @@ const Navbar = ({handleOpen, handleClose, open}) => {
               >
                 Login
               </Link>
-              <ShoppingCartOutlinedIcon onClick={handleOpen}/>
-              <ModalCustomContainer open={open} handleClose={handleClose}/>
+
+              
+              </Box>
+              <Box sx={{margin: "5%"}}>
+                <Typography variant={"subtitle1"}>|</Typography>
+              </Box>
+              
+              <ShoppingCartOutlinedIcon onClick={handleOpen} />
+              <ModalCustomContainer open={open} handleClose={handleClose} />
             </Box>
           </Box>
         </Toolbar>

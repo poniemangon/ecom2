@@ -6,7 +6,7 @@ import { Box } from "@mui/material";
 const Layout = () => {
   return (
     <div>
-      <Box sx={{ height: "60px" }}>
+      <Box >
         <NavbarContainer />
       </Box>
       <Box sx={{ backgroundColor: "secondary.second", minHeight: "calc(100vh - 360px)" }}>

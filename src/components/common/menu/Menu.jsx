@@ -7,9 +7,12 @@ const Menu = ({ menu, flexDirection }) => {
   return (
     <Box sx={{
       display: "flex",
-      flexDirection: flexDirection, // Use the flexDirection prop to set the layout
+      flexDirection: {xs: 'column', sm: "row", md: 'row'},
+      alignItems: "center",
+      paddingTop: {xs: "0%"}
     }}>
       {menu.map((item, index) => (
+        
         <Link
           key={item.id}
           to={item.path}
@@ -25,7 +28,7 @@ const Menu = ({ menu, flexDirection }) => {
             e.currentTarget.style.color = "white";
           }}
         >
-          <Typography variant="body1">{item.title}</Typography>
+          <Box sx={{padding: {xs: "10%"}}}><Typography variant="body1">{item.title}</Typography></Box>
         </Link>
       ))}
     </Box>

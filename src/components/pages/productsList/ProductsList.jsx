@@ -13,12 +13,12 @@ const ProductsList = ({ products, categoryName }) => {
       <Box
         sx={{
           backgroundColor: "secondary.main",
-          padding: "5%",
+          padding: "50px",
           textAlign: "center",
         }}
       >
         <Typography variant="h4" sx={{ color: "white" }}>
-          {categoryName.toUpperCase()}
+          { categoryName ? categoryName.toUpperCase(): ''}
         </Typography>
       </Box>
           <Box sx={{margin: "10%"}}>
@@ -29,10 +29,9 @@ const ProductsList = ({ products, categoryName }) => {
           <ProductCardContainer
             key={product.id}
             id={product.id}
-            name={product.name}
+            name={product.name ?? product.name.toUpperCase()}
             image={product.image}
             description={product.description}
-            isListCard={true}
           />
         );
       })}

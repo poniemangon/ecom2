@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
+import TinyProductCard from "./TinyProductCard";
 
 
 
@@ -21,7 +22,7 @@ const style = {
   
 };
 
-const ModalCustom = ({open, handleClose}) => {
+const ModalCustom = ({open, handleClose, cart, onRemove}) => {
   return (
 <Modal
   open={open}
@@ -30,9 +31,9 @@ const ModalCustom = ({open, handleClose}) => {
   aria-describedby="modal-modal-description"
 >
   <Box sx={style}>
-    <Typography id="modal-modal-title" variant="h6" component="h2">
-      Text in a modal
-    </Typography>
+    {
+    cart.map( e => <TinyProductCard key={e.id} name={e.name} image={e.image} quantity={e.quantity} id={e.id}/>)
+    }
     <Link to={'/checkout'}>
       <Button  onClick={handleClose} variant={'contained'} sx={{backgroundColor: "primary.main", borderRadius: "0%", width: "80%", left: "10%"}}>CHECKOUT</Button>
     </Link>

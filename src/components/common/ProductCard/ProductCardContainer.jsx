@@ -8,7 +8,7 @@ const ProductCardContainer = ({ id, image, name, description, isListCard, onAdd 
 
   return (
     <div>
-      {/* Pass isListCard as a prop to ProductCard */}
+     
       <ProductCard
         id={id}
         image={image}
