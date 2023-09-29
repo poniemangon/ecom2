@@ -32,7 +32,9 @@ const ModalCustom = ({open, handleClose, cart, onClear}) => {
   aria-labelledby="modal-modal-title"
   aria-describedby="modal-modal-description"
 >
+  
   <Box sx={style}>
+  <Button onClick={()=> onClear()}>Clear cart</Button>
     {
     cart.map( e => <TinyProductCard key={e.id} name={e.name} image={e.image} quantity={e.quantity} id={e.id}/>)
     }
@@ -40,7 +42,7 @@ const ModalCustom = ({open, handleClose, cart, onClear}) => {
       <Button  onClick={handleClose} variant={'contained'} sx={{backgroundColor: "primary.main", borderRadius: "0%", width: "80%", left: "10%"}}>CHECKOUT</Button>
     </Link>
 
-    <Button onClick={()=> onClear()}>Clear cart</Button>
+    
 
   </Box>
 </Modal>

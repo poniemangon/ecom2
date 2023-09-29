@@ -1,8 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+
+
+
+
+
+const loadCartFromLocalStorage = () => {
+  try {
+    const cartData = localStorage.getItem('cart');
+    if (cartData) {
+      return JSON.parse(cartData);
+    }
+  } catch (error) {
+    console.error('Error loading cart from local storage:', error);
+  }
+  return [];
+};
+
 const initialState = {
-    cart: []
+  cart: loadCartFromLocalStorage()
 }
+
 
 export const cartSlice = createSlice({
   name: 'cart',
@@ -25,18 +43,18 @@ export const cartSlice = createSlice({
       else {
         state.cart = [...state.cart, action.payload] 
       } 
-
+      localStorage.setItem('cart', JSON.stringify(state.cart));
     
     },
     removeById: (state, action)=>{
-      console.log("el producto es de id ", action.payload.id)
-      console.log("el cart tiene ", state.cart.length)
+
       let newArr = state.cart.filter(e => e.id !== action.payload.id)
       state.cart = newArr;
-      console.log("el cart tiene ", state.cart.length)
+      localStorage.setItem('cart', JSON.stringify(state.cart));
     },
     clearCart: (state) => {
       state.cart = []
+      localStorage.removeItem('cart');
     }
   },
 

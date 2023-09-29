@@ -119,7 +119,7 @@ const Navbar = ({ handleOpen, handleClose, open }) => {
                 <Typography variant={"subtitle1"}>|</Typography>
               </Box>
               
-              <ShoppingCartOutlinedIcon onClick={handleOpen} />
+              <ShoppingCartOutlinedIcon  sx={{'&:hover': {cursor: 'pointer'}}} onClick={handleOpen} />
               <ModalCustomContainer open={open} handleClose={handleClose} />
             </Box>
           </Box>
