@@ -8,6 +8,8 @@ import TinyProductCard from "./TinyProductCard";
 
 
 
+
+
 const style = {
   position: 'absolute',
   top: '35%',
@@ -22,7 +24,7 @@ const style = {
   
 };
 
-const ModalCustom = ({open, handleClose, cart, onRemove}) => {
+const ModalCustom = ({open, handleClose, cart, onClear}) => {
   return (
 <Modal
   open={open}
@@ -37,6 +39,8 @@ const ModalCustom = ({open, handleClose, cart, onRemove}) => {
     <Link to={'/checkout'}>
       <Button  onClick={handleClose} variant={'contained'} sx={{backgroundColor: "primary.main", borderRadius: "0%", width: "80%", left: "10%"}}>CHECKOUT</Button>
     </Link>
+
+    <Button onClick={()=> onClear()}>Clear cart</Button>
 
   </Box>
 </Modal>

@@ -29,14 +29,21 @@ export const cartSlice = createSlice({
     
     },
     removeById: (state, action)=>{
-      let newArr = state.cart.filter(e => e.id !== id)
+      console.log("el producto es de id ", action.payload.id)
+      console.log("el cart tiene ", state.cart.length)
+      let newArr = state.cart.filter(e => e.id !== action.payload.id)
       state.cart = newArr;
+      console.log("el cart tiene ", state.cart.length)
+    },
+    clearCart: (state) => {
+      state.cart = []
     }
   },
+
 })
 
-// Action creators are generated for each case reducer function
-export const { addToCart, removeById } = cartSlice.actions
+
+export const { addToCart, removeById, clearCart } = cartSlice.actions
 
 export default cartSlice.reducer
 
