@@ -24,7 +24,7 @@ const style = {
   
 };
 
-const ModalCustom = ({open, handleClose, cart, onClear}) => {
+const ModalCustom = ({open, handleClose, cart, onClear, total}) => {
   return (
 <Modal
   open={open}
@@ -36,8 +36,11 @@ const ModalCustom = ({open, handleClose, cart, onClear}) => {
   <Box sx={style}>
   <Button onClick={()=> onClear()}>Clear cart</Button>
     {
-    cart.map( e => <TinyProductCard key={e.id} name={e.name} image={e.image} quantity={e.quantity} id={e.id}/>)
+    cart.map( e => <TinyProductCard key={e.id} name={e.name} image={e.image} quantity={e.quantity} price={e.price + "$"} id={e.id}/>)
     }
+    
+
+    <Typography align="center" variant="subtitle1">{total}$</Typography>
     <Link to={'/checkout'}>
       <Button  onClick={handleClose} variant={'contained'} sx={{backgroundColor: "primary.main", borderRadius: "0%", width: "80%", left: "10%"}}>CHECKOUT</Button>
     </Link>

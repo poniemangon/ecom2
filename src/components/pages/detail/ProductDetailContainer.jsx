@@ -8,6 +8,7 @@ import { addToCart } from "../../../store/cartSlice";
 
 
 const ProductDetailContainer = () => {
+  let [counter, setCounter] = useState(1);
   const { id } = useParams();
   const dispatch = useDispatch()
   const [product, setProduct] = useState({});
@@ -38,6 +39,8 @@ const ProductDetailContainer = () => {
       image={product.image}
       name={product.name}
       description={product.description}
+      counter={counter}
+      setCounter={setCounter}
       
     />
   );

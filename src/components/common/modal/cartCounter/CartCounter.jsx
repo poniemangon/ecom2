@@ -1,7 +1,8 @@
 
 import { Box, Button, Typography } from "@mui/material";
 
-const Counter = ({ counter, setCounter }) => {
+const CartCounter = ({ counter, setCounter, plusOne, minusOne }) => {
+  
   return (
     <Box sx={{ display: "flex", flexDirection: "row" }}>
       <Box
@@ -11,14 +12,15 @@ const Counter = ({ counter, setCounter }) => {
           backgroundColor: "secondary.second",
           marginRight: "3%",
           height: "36.5px",
+          
         }}
       >
-        <Button onClick={() => setCounter(counter + 1)}>+</Button>
-        <Typography variant="subtitle1" sx={{ paddingTop: "5%" }}>
+        <Button onClick={() => {setCounter(counter + 1); plusOne()}}>+</Button>
+        <Typography variant="subtitle2" sx={{ paddingTop: "5%" }}>
           {counter}
         </Typography>
         {counter > 1 ? (
-          <Button onClick={() => setCounter(counter - 1)}>-</Button>
+          <Button onClick={() => {setCounter(counter - 1); ; minusOne()}}>-</Button>
         ) : (
           <Button>-</Button>
         )}
@@ -27,4 +29,4 @@ const Counter = ({ counter, setCounter }) => {
   );
 };
 
-export default Counter;
+export default CartCounter;

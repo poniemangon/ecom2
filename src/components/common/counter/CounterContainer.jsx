@@ -2,8 +2,7 @@ import { useState } from "react"
 import Counter from "./Counter"
 
 
-const CounterContainer = ({onAdd}) => {
-    let [counter, setCounter] = useState(1)
+const CounterContainer = ({onAdd, counter, setCounter}) => {
     
   return (
     

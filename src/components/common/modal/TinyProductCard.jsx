@@ -2,8 +2,10 @@ import { Box, Typography, Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { removeById } from "../../../store/cartSlice";
 import { useDispatch } from "react-redux";
+import CartCounterContainer from "./cartCounter/CartCounterContainer";
 
-const TinyProductCard = ({ id, name, quantity, image }) => {
+
+const TinyProductCard = ({ id, name, quantity, image, price }) => {
   const dispatch = useDispatch();
 
   const onRemove = () => {
@@ -11,12 +13,12 @@ const TinyProductCard = ({ id, name, quantity, image }) => {
   };
   return (
     <Box sx={{ display: "flex", flexDirection: "row", paddingBottom: "5%" }}>
-      <Box>
-        <img width="100px" src={image} alt="" />
+      <Box sx={{height: "60px"}}>
+        <img width="80px" src={image} alt="" />
       </Box>
       <Box
         sx={{
-          padding: "3%",
+          paddingLeft: "3%",
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
@@ -24,8 +26,9 @@ const TinyProductCard = ({ id, name, quantity, image }) => {
       >
         <Box sx={{ display: "flex", flexDirection: "row" }}>
           <Box sx={{width: "200px"}}>
-            <Typography variant="h6">{name}</Typography>
-            <Typography variant="overline">{quantity}</Typography>
+            <Typography variant="subtitle1">{name}</Typography>
+            <CartCounterContainer quantity={quantity} id={id}/>
+            <Typography variant="overline">{price}</Typography>
           </Box>
 
           <Box >
