@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+
 const initialState = {
     user: {},
     accessToken: "",
@@ -7,14 +8,19 @@ const initialState = {
 }
 
 export const authSlice = createSlice({
-  name: 'cart',
+  name: 'auth',
   initialState,
   reducers: {
-    login: ()=>{}
+    loginRedux: (state, action)=>{
+      
+      state.accessToken = action.payload.accessToken;
+      state.isLogged = true;
+    }
+
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { login } = authSlice.actions
+export const { loginRedux } = authSlice.actions
 
 export default authSlice.reducer

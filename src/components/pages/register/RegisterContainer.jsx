@@ -1,25 +1,19 @@
 import { useFormik } from "formik";
-import Login from "./Login";
+
 import * as Yup from "yup";
 import { useState } from "react";
-import { login } from "../../../firebaseConfig";
-import { loginRedux } from "../../../store/authSlice";
-import { useDispatch } from "react-redux";
+import { register } from "../../../firebaseConfig";
+import Register from "./Register";
 
 
-
-const LoginContainer = () => {
-  const dispatch = useDispatch();
+const RegisterContainer = () => {
   const { handleSubmit, handleChange, errors } = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     onSubmit: async (data) => {
-      console.log(data)
-      const res = await login(data);
-      console.log(res.user)
-      dispatch(loginRedux(res.user));
+      await register(data)
     },
     validateOnChange: false,
     validationSchema: Yup.object({
@@ -35,7 +29,7 @@ const LoginContainer = () => {
     setShowPassword(!showPassword)
   }
   return (
-    <Login
+    <Register
       showPassword={showPassword}
       handleShow={handleShow}
       handleSubmit={handleSubmit}
@@ -45,4 +39,4 @@ const LoginContainer = () => {
   );
 };
 
-export default LoginContainer;
+export default RegisterContainer;

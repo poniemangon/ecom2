@@ -3,6 +3,7 @@ import ProductsListContainer from "../components/pages/productsList/ProductsList
 import ProductDetailContainer from "../components/pages/detail/ProductDetailContainer";
 import CheckoutContainer from "../components/pages/checkout/CheckoutContainer";
 import LoginContainer from "../components/pages/login/LoginContainer";
+import RegisterContainer from "../components/pages/register/RegisterContainer";
 
 
 
@@ -32,9 +33,9 @@ export const menuRoutes = [
         path: "/login",
         Element: LoginContainer
     },
-    // {
-    //     id:"register",
-    //     path: "/register",
-    //     Element: Register
-    // }
+    {
+        id:"register",
+        path: "/register",
+        Element: RegisterContainer
+    }
 ]
