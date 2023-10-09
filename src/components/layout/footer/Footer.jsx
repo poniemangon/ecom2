@@ -22,6 +22,7 @@ const Footer = () => {
           alignItems: "center",
           justifyContent: "center",
           padding: "5%",
+          width: "100%"
         }}
         xs={{ display: "block" }}
       >

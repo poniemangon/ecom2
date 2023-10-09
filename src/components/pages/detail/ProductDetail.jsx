@@ -78,7 +78,7 @@ const ProductDetail = ({ id, image, name, description, onAdd, counter, setCounte
           {description}
         </Typography>
 
-        <Box sx={{ marginTop: "10%", display: "flex" }}>
+        <Box sx={{ marginTop: "10%", display: "flex", flexDirection: {xs: "column", sm: "row", md: "row", lg: "row"}, alignItems: "center", justifyContent: "center" }}>
           <CounterContainer setCounter={setCounter} counter={counter} />
           <Button
             onClick={() => onAdd(counter)}
@@ -86,8 +86,10 @@ const ProductDetail = ({ id, image, name, description, onAdd, counter, setCounte
             sx={{
               backgroundColor: "primary.main",
               borderRadius: "0%",
-              height: "36.5px",
-              width: "128px",
+              marginTop: {xs: "5%", sm: "0%", md: "0%", lg: "0%"},
+              marginLeft: {xs: "0%", sm: "5%", md: "5%", lg: "5%"},
+              width: "137px",
+
             }}
           >
             Add to cart
