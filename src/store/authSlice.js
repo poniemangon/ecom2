@@ -12,9 +12,10 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     loginRedux: (state, action)=>{
-      
+      state.user = action.payload.email;
       state.accessToken = action.payload.accessToken;
       state.isLogged = true;
+      
     }
 
   },

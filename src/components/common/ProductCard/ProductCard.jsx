@@ -6,8 +6,9 @@ import CounterContainer from "../counter/CounterContainer";
 
 
 
-const ProductCard = ({ id, name, description, image, onAdd }) => {
-  const flexDirection =  id % 2 === 0 ? "row" : "row-reverse";
+const ProductCard = ({ id, name, description, image, onAdd, key, index }) => {
+  console.log(index, 'el inde')
+  const flexDirection =  index % 2 === 0 ? "row" : "row-reverse";
 
 
 

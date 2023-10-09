@@ -37,5 +37,10 @@ export const menuRoutes = [
         id:"register",
         path: "/register",
         Element: RegisterContainer
-    }
+    },
+    // {
+    //     id: "dasboard",
+    //     path: "/dashboard",
+    //     Element: DashboardContainer
+    // }
 ]

@@ -1,7 +1,7 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 
-const ProductCardContainer = ({ id, image, name, description, isListCard, onAdd }) => {
+const ProductCardContainer = ({ index, id, image, name, description, isListCard, onAdd }) => {
   
 
 
@@ -10,12 +10,14 @@ const ProductCardContainer = ({ id, image, name, description, isListCard, onAdd 
     <div>
      
       <ProductCard
+        index={index}
         id={id}
         image={image}
         name={name}
         description={description}
         isListCard={isListCard}
         onAdd={onAdd}
+        
       />
     </div>
   );

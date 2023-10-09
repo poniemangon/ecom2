@@ -53,8 +53,13 @@ export const register = async ({email, password}) => {
 
 }
 
-
+let googleProv = new GoogleAuthProvider()
 
 export const loginWithGoogle = async () => {
-
+  try {
+    let res = await signInWithPopup(auth, googleProv);
+    return res
+  } catch (error) {
+    console.log(error);
+  }
 }

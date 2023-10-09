@@ -22,12 +22,13 @@ const ProductsList = ({ products, categoryName }) => {
         </Typography>
       </Box>
           <Box sx={{margin: "10%"}}>
-      {products.map((product) => {
+      {products.map((product, index) => {
+          
         return (
 
           
           <ProductCardContainer
-            key={product.id}
+            index={index}
             id={product.id}
             name={product.name ?? product.name.toUpperCase()}
             image={product.image}

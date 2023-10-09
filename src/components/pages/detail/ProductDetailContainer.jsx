@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import { getProductById } from "../../../services/productsServices";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../store/cartSlice";
+import { db } from "../../../firebaseConfig";
+import { collection, doc, getDoc } from "firebase/firestore";
+
 
 
 
@@ -12,11 +15,15 @@ const ProductDetailContainer = () => {
   const { id } = useParams();
   const dispatch = useDispatch()
   const [product, setProduct] = useState({});
-  console.log(product);
+  let refCol = collection(db, 'products');
+  let refDoc = doc(refCol, id)
+
   useEffect(() => {
     const getData = async () => {
-      let data = await getProductById(id);
-      setProduct(data);
+      let res = await getDoc(refDoc);
+      let product = {...res.data(), id: res.id}
+      setProduct(product);
+  
     };
 
     getData();
