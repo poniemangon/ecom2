@@ -39,7 +39,7 @@ const ProductDetail = ({ id, image, name, description, onAdd, counter, setCounte
           padding: "10%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
+          alignItems: "center",
           color: "secondary.main",
         }}
       >

@@ -18,7 +18,7 @@ const ModalCustomContainer = ({ open, handleClose }) => {
     dispatch(getTotal())
   }, [cart, dispatch])
 
-  console.log(total)
+  
 
 
 

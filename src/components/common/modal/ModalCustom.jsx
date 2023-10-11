@@ -12,10 +12,11 @@ import TinyProductCard from "./TinyProductCard";
 
 const style = {
   position: 'absolute',
-  top: '35%',
-  right: '0%',
+  top: '40%',
+  right: '50%',
+  left: {lg: '80%', md: "50%", sm: "50%", xs: "50%"},
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: 320,
   bgcolor: 'background.paper',
   boxShadow: 24,
   p: 4,
@@ -27,6 +28,7 @@ const style = {
 const ModalCustom = ({open, handleClose, cart, onClear, total}) => {
   return (
 <Modal
+  sx={{}}
   open={open}
   onClose={handleClose}
   aria-labelledby="modal-modal-title"

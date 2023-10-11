@@ -2,9 +2,10 @@ import { useFormik } from "formik";
 import Login from "./Login";
 import * as Yup from "yup";
 import { useState } from "react";
-import { login, loginWithGoogle } from "../../../firebaseConfig";
+import { onSignIn, loginWithGoogle } from "../../../firebaseConfig";
 import { loginRedux } from "../../../store/authSlice";
 import { useDispatch } from "react-redux";
+import { login } from "../../../store/authThunk";
 
 
 
@@ -16,10 +17,7 @@ const LoginContainer = () => {
       password: "",
     },
     onSubmit: async (data) => {
-      console.log(data)
-      const res = await login(data);
-      console.log(res.user)
-      dispatch(loginRedux(res.user));
+      dispatch(login(data));
     },
     validateOnChange: false,
     validationSchema: Yup.object({

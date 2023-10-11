@@ -3,7 +3,7 @@ export const menu = [
     {id: 2, title: "HEADPHONES", path: "/category/headphones"},
     {id: 3, title: "SPEAKERS", path: "/category/speakers"},
     {id: 4, title: "EARPHONES", path: "/category/earphones"},
-    {id: 5, title: "DASHBOARD", path: "/dashboard"}
+    // {id: 5, title: "DASHBOARD", path: "/dashboard"}
 
     
 ]

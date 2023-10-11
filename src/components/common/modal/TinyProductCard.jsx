@@ -12,7 +12,7 @@ const TinyProductCard = ({ id, name, quantity, image, price }) => {
     dispatch(removeById({ id }));
   };
   return (
-    <Box sx={{ display: "flex", flexDirection: "row", paddingBottom: "5%" }}>
+    <Box sx={{ display: "flex",  paddingBottom: "5%" }}>
       <Box sx={{height: "60px"}}>
         <img width="80px" src={image} alt="" />
       </Box>
@@ -25,8 +25,8 @@ const TinyProductCard = ({ id, name, quantity, image, price }) => {
         }}
       >
         <Box sx={{ display: "flex", flexDirection: "row" }}>
-          <Box sx={{width: "200px"}}>
-            <Typography variant="subtitle1">{name}</Typography>
+          <Box sx={{maxWidth: "200px"}}>
+            <Typography variant="subtitle2">{name}</Typography>
             <CartCounterContainer quantity={quantity} id={id}/>
             <Typography variant="overline">{price}</Typography>
           </Box>
