@@ -18,7 +18,7 @@ export const customTheme = createTheme({
       second: "#FBAF85",
     },
     secondary: {
-      main: "#101010", //negro
+      main: "#1A1A1A", //negro
       second: "#f1f1f1" // blanco
     },
   },

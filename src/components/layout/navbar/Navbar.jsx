@@ -14,7 +14,7 @@ import { Typography } from "@mui/material";
 
 const Navbar = ({ handleOpen, handleClose, open }) => {
   return (
-    <Box sx={{ flexGrow: 1}}>
+    <Box sx={{ flexGrow: 1, }}>
       <AppBar
         sx={{ backgroundColor: "secondary.main", margin: "0" }} // Use sx for styles
         position="static"
@@ -28,6 +28,8 @@ const Navbar = ({ handleOpen, handleClose, open }) => {
               gap: "2rem",
               width: "100%",
               height: "64px",
+              
+              
               
             }}
           >
@@ -73,7 +75,8 @@ const Navbar = ({ handleOpen, handleClose, open }) => {
               paddingLeft: {lg: "8%"},
               paddingRight: {lg: "8%"},
               paddingTop: "1.5%",
-              paddingBottom: "1.5%"
+              paddingBottom: "1.5%",
+              borderBottom: "0.1rem solid grey"
             }}
           >
             <Box>

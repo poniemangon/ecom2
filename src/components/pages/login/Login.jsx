@@ -9,7 +9,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 // sx={{ m: 1, width: '25ch' }}
 
 
-const Login = ({google, handleSubmit, handleChange, errors, handleShow, showPassword}) => {
+const Login = ({ handleSubmit, handleChange, errors, handleShow, showPassword}) => {
 
   return (
     <Box sx={{paddingTop:"20px", display: 'flex',  justifyContent: "center"}}>
@@ -43,7 +43,7 @@ const Login = ({google, handleSubmit, handleChange, errors, handleShow, showPass
           <FormHelperText sx={{color: "#d32f2f"}}>{errors.password}</FormHelperText>
         </FormControl>
         <Button  type="submit" variant="contained">Loguearse</Button>
-        <Button onClick={google}>Google</Button>
+        
         </Box>
       </form>
       

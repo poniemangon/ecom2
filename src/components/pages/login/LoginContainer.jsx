@@ -2,10 +2,10 @@ import { useFormik } from "formik";
 import Login from "./Login";
 import * as Yup from "yup";
 import { useState } from "react";
-import { onSignIn, loginWithGoogle } from "../../../firebaseConfig";
-import { loginRedux } from "../../../store/authSlice";
 import { useDispatch } from "react-redux";
-import { login } from "../../../store/authThunk";
+import { login, loginGoogle } from "../../../store/authThunk";
+import { Button } from "@mui/material"
+
 
 
 
@@ -26,10 +26,10 @@ const LoginContainer = () => {
     }),
   });
 
-  const ingresarConGoogle = async () => {
-    let res = await loginWithGoogle();
-    dispatch(loginRedux(res.user));
-  }
+  // const ingresarConGoogle = async () => {
+  //   let res = await loginWithGoogle();
+  //   dispatch(loginRedux(res.user));
+  // }
 
   const [showPassword, setShowPassword] = useState(false)
   const handleShow = () =>{
@@ -38,16 +38,19 @@ const LoginContainer = () => {
 
   }
   return (
+    <>
     <Login
       showPassword={showPassword}
       handleShow={handleShow}
       handleSubmit={handleSubmit}
       handleChange={handleChange}
       errors={errors}
-      google={ingresarConGoogle}
+      
     />
 
     
+    <Button onClick={()=> dispatch(loginGoogle())}>Google</Button>
+    </>
   );
 };
 
